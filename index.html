@@ -186,7 +186,61 @@
 				</section>
 				
 				<section>
+					<section>
 					<h2>SHA2:een siirtyminen</h2>
+					</section>
+					<section>
+						<h3>Miksi siirtyä käyttämään SHA2-allekirjoitusalgoritmejä HTTPS-liikenteessä</h3>
+						<ul>
+							<li>SHA1-allekirjoitusalgoritmi on 20 vuotta vanha ja se on todettu haavoittuvaiseksi</li>
+							<li>Modernien selainten antamat virheilmoitukset</li>
+							<li>Vältetään käyttäjien ylimääräiset soitot helpdeskiin</li>
+							<li>"Se miltä HAKA-kirjautuminen näyttää ulospäin"</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Miten siirtyä käyttämään SHA2-algoritmejä</h3>
+						<ul>
+							<li>Tarkistettava mikä hajautusalgoritmi on käytössä esimerkiksi: <a href="https://www.ssllabs.com/ssltest">SSLLABSin </a>sivuilta</li>
+							<li>Pyydettävä uusi varmenne CA:lta</li>
+							<ul>
+								<li>Osa varmentajista suostuu allekirjoittamaan vanhat, olemassa olevat varmenteet uudelleen uudella algoritmillä</li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Aikataulu</h3>
+						<ul>
+							<li>Google Chrome varoittaa(1) varmenteista jotka ovat voimassa > 1.1.2016</li>
+							<ul>
+								<li>Varmenteet jotka ovat voimassa > 1.1.2017 aiheuttavat "Palvelimen varmenne ei ole luotettu" -sivun esittämisen</li>
+							</ul>
+							<li>Mozilla Firefox lopettaa kokonaan tuen SHA1-algoritmeille vuonna 2017</li>
+							<li>Internet Explorer TARKASTETTAVA</li>
+						</ul>
+						<img src="pics/https_error.png" />
+					</section>
+
+					<section>
+						<h3>SAML-viestien allekirjoitukset</h3>
+						<ul>
+							<li>Shibboleth IdPv2 ei pysty tuottamaan SHA2-allekirjoitettuja autentikaatiovastauksia</li>
+							<ul>
+								<li>Tuki SHA2:lle saatavissa erillisellä laajennoksella</li>
+							</ul>
+							<li>Shibboleth SP versiot 2.4.3 & 2.5.x pystyvät muodostamaan SHA2-allekirjoitettuja autentikaatiopyyntöjä</li>
+						</ul>
+						<img src="pics/https_error.png" />
+					</section>
+
+					<section>
+						<h4>Operaattori esittää</h4>
+						<p>HTTPS-varmenteet uusitaan mahdollisimman nopeasti, mutta viimeistään vuoden 2016 toisella vuosineljänneksellä</p>
+						<p>SAML-viestien SHA2 allekirjotukset synkronoidaan IdPv3 käyttöönoton kanssa, mutta viimeistään vuoden 2016 toisella vuosineljänneksellä</p>
+
+					</section>
 				</section>
 
 				<section>
@@ -197,8 +251,36 @@
 					</section>
 					
 					<section>
-						<h2>Kirjautumistilastojen julkisuus</h2>
-					</section>
+                            <h2>Kirjautumistilastojen kehittäminen</h2>
+                            <p> Kirjautumistilastot nousevat usein esiin kehitystöiden joukosta. Monet federaatiot ovat toteuttaneet omia työkalujaan ja tämä herättää aina keskustelua.</p>
+                    </section>
+                    
+                    <section>
+                            <h2>Kirjautumistilastot nyt </h2>
+                            <ul>
+                                    <li> In-house työkalu</li>
+                                    <li> Tilastot sijaitsevat <a href="https://rr.funet.fi/stats.php">resurssirekisterissä</a> joka vaatii Haka-kirjautumisen (ns. puolijulkiset)</li>
+                                    <li> Tilastot haetaan IdP-palvelimilta </li>
+                                    <li> IdP-palvelimet tuottavat tilastotiedoston <a href="https://confluence.csc.fi/x/zAclAg">lokianalyysityökalulla</a></li>
+                            </ul>
+                    </section>
+                    
+                    <section>
+                            <h2> Kirjautumistilastojen tulevaisuus </h2>
+                            <p> Federaatiorintamalla on ollut puhetta keskitetystä statistiikka-palvelusta joka tuo kolmannen kehityssuunnan mukanaan julkisuus kysymyksen.
+                            <ol>
+                                    <li>Kehitetään nykyistä statistiikkatyökalua</li>
+                                    <li>Tutustutaan muiden federaatioiden tuotteisiin, esim:</l>
+                                    <ul>
+                                            <li><a href="https://flog.sunet.se">SWAMID https://flog.sunet.se</a></li>
+                                            <li><a href="https://rasmus.wayf.dk">WAYD.DK https://rasmus.wayf.dk</a></li>
+                                    </ul>
+                                    <li>Osallistutaan keskitettyyn palveluun
+                                            <ul><li>Ovatko statistiikat julkista tietoa?</li></ul>
+                                    </li>
+                            </ol>
+                    </section>
+                                        
 				</section>
 
 			</div>
