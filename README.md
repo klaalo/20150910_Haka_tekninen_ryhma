@@ -1,4 +1,4 @@
-# reveal.js
+# Haka technical group notes
 
 Meeting notes for Haka federation technical group 10.9.2015
 
